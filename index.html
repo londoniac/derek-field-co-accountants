@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Derek Field & Co — Chartered Accountants, East Grinstead</title>
+  <meta name="description" content="Derek Field & Co — Chartered Certified Accountants in East Grinstead. Audit, tax, payroll, VAT, and management accounting for businesses of all sizes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0F2440;
+      --navy-mid: #1A3558;
+      --teal: #1A8A7D;
+      --teal-light: #23B5A4;
+      --teal-pale: #E8F6F4;
+      --cloud: #F6F8FA;
+      --white: #FFFFFF;
+      --text: #1E293B;
+      --text-light: #64748B;
+      --border: #E2E8F0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+
+    .banner { background: var(--teal); color: white; text-align: center; padding: 0.6rem 1rem; font-size: 0.82rem; font-weight: 500; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-brand { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
+    .nav-brand span { color: var(--teal); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-light); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { background: var(--navy); color: white !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600 !important; transition: all 0.3s; }
+    .nav-cta:hover { background: var(--teal) !important; }
+
+    /* Hero */
+    .hero {
+      position: relative; background: var(--navy); padding: 6rem 2rem 7rem;
+      text-align: center; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse at 70% 30%, rgba(26, 138, 125, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 70%, rgba(26, 53, 88, 0.4) 0%, transparent 50%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image:
+        linear-gradient(var(--teal) 1px, transparent 1px),
+        linear-gradient(90deg, var(--teal) 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(26, 138, 125, 0.12); border: 1px solid rgba(26, 138, 125, 0.2);
+      padding: 0.45rem 1.1rem; border-radius: 100px;
+      font-size: 0.78rem; font-weight: 500; color: var(--teal-light);
+      margin-bottom: 2rem; letter-spacing: 0.03em;
+    }
+    .hero h1 {
+      font-family: 'Source Serif 4', serif; font-weight: 700;
+      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+      color: var(--white); line-height: 1.2; margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--teal-light); font-weight: 400; }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.5);
+      max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.85rem 1.75rem; border-radius: 6px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
+    }
+    .btn-teal { background: var(--teal); color: white; }
+    .btn-teal:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26, 138, 125, 0.3); }
+    .btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1.5px solid rgba(255,255,255,0.15); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal-light); }
+    .hero-clients {
+      margin-top: 2.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.3);
+    }
+
+    /* Services */
+    .services { padding: 5rem 2rem; background: var(--cloud); }
+    .services .container { max-width: 1000px; margin: 0 auto; }
+    .section-head { text-align: center; margin-bottom: 3rem; }
+    .section-label {
+      font-size: 0.75rem; font-weight: 600; color: var(--teal);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: 'Source Serif 4', serif; font-weight: 700;
+      font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--navy); line-height: 1.25;
+    }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;
+    }
+    .service-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.75rem; transition: all 0.3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.06); border-color: var(--teal); }
+    .service-card-icon {
+      width: 44px; height: 44px; background: var(--teal-pale);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-family: 'Source Serif 4', serif; font-weight: 700;
+      font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem;
+    }
+    .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+
+    /* About */
+    .about { padding: 5rem 2rem; background: var(--white); }
+    .about .container { max-width: 800px; margin: 0 auto; text-align: center; }
+    .about p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
+    .about-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .about-stat {
+      padding: 1.5rem; background: var(--cloud); border-radius: 10px; border: 1px solid var(--border);
+    }
+    .about-stat-number {
+      font-family: 'Source Serif 4', serif; font-weight: 700;
+      font-size: 1.8rem; color: var(--teal); margin-bottom: 0.2rem;
+    }
+    .about-stat-label { font-size: 0.82rem; color: var(--text-light); }
+
+    /* Contact */
+    .contact { padding: 5rem 2rem; background: var(--cloud); }
+    .contact .container { max-width: 1000px; margin: 0 auto; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+    .contact-card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem;
+    }
+    .contact-item { margin-bottom: 1.75rem; }
+    .contact-item:last-child { margin-bottom: 0; }
+    .contact-item h3 {
+      font-family: 'Source Serif 4', serif; font-size: 0.95rem;
+      color: var(--navy); margin-bottom: 0.35rem;
+    }
+    .contact-item p, .contact-item a {
+      font-size: 0.95rem; color: var(--text-light); text-decoration: none; line-height: 1.6;
+    }
+    .contact-item a:hover { color: var(--teal); }
+    .contact-map {
+      border-radius: 16px; overflow: hidden; border: 1px solid var(--border); min-height: 320px;
+    }
+    .contact-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
+
+    footer { background: var(--navy); padding: 3rem 2rem; text-align: center; }
+    .footer-brand {
+      font-family: 'Source Serif 4', serif; font-weight: 700;
+      font-size: 1.05rem; color: var(--white); margin-bottom: 0.4rem;
+    }
+    .footer-brand span { color: var(--teal-light); }
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 4rem 1.5rem 5rem; }
+      .about-stats { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="banner">✨ Free demo site built for Derek Field & Co — reply to our email to claim it</div>
+
+  <nav>
+    <a href="#" class="nav-brand">Derek Field <span>&</span> Co</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="tel:01342327353" class="nav-cta">01342 327353</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Chartered Certified Accountants · ICAEW</div>
+      <h1>Your numbers, <em>in safe hands.</em></h1>
+      <p class="hero-sub">Audit, tax, payroll, and management accounting for businesses of all sizes — from sole traders to multi-million pound companies. Based on the High Street in East Grinstead.</p>
+      <div class="hero-actions">
+        <a href="tel:01342327353" class="btn btn-teal">☎ Call: 01342 327353</a>
+        <a href="#services" class="btn btn-outline">Our Services →</a>
+      </div>
+      <p class="hero-clients">Trusted by sole traders, SMEs, and European clients across the UK</p>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">What We Do</p>
+        <h2 class="section-title">Full-service accounting, tailored to your business.</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-card-icon">📊</div>
+          <h3>Audit &amp; Assurance</h3>
+          <p>Statutory audits and assurance services that give you and your stakeholders confidence in your numbers.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">💷</div>
+          <h3>Corporate Tax</h3>
+          <p>Corporation tax planning and compliance, structured to minimise your liability while keeping HMRC happy.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">👤</div>
+          <h3>Personal Tax</h3>
+          <p>Self-assessment, capital gains, inheritance tax planning — we take the stress out of your personal finances.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">📋</div>
+          <h3>Payroll Services</h3>
+          <p>End-to-end payroll management including RTI submissions, pensions auto-enrolment, and P11D reporting.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">📈</div>
+          <h3>Management Accounts</h3>
+          <p>Monthly and quarterly management reporting that gives you the insight to make better business decisions.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card-icon">🇪🇺</div>
+          <h3>VAT &amp; International</h3>
+          <p>UK and EU VAT compliance, cross-border advisory, and support for European clients operating in the UK.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">About Us</p>
+        <h2 class="section-title">Established on East Grinstead High Street.</h2>
+      </div>
+      <p>Derek Field & Co provides a wide range of accounting, audit, and tax services to a diverse portfolio of clients. From the smallest sole trader to large multi-million pound companies, we deliver practical, hands-on financial guidance that helps businesses grow.</p>
+      <p>We have a particularly strong reputation with European clients and businesses operating across the UK and EU, offering specialist knowledge of cross-border compliance and reporting requirements.</p>
+      <div class="about-stats">
+        <div class="about-stat">
+          <div class="about-stat-number">5★</div>
+          <div class="about-stat-label">Google Rating</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">UK &amp; EU</div>
+          <div class="about-stat-label">Cross-border expertise</div>
+        </div>
+        <div class="about-stat">
+          <div class="about-stat-number">ICAEW</div>
+          <div class="about-stat-label">Chartered Certified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let's talk about your business.</h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-item">
+            <h3>📍 Address</h3>
+            <p>Crown House<br>37 High Street<br>East Grinstead<br>RH19 3AF</p>
+          </div>
+          <div class="contact-item">
+            <h3>📞 Phone</h3>
+            <a href="tel:01342327353">01342 327353</a>
+          </div>
+          <div class="contact-item">
+            <h3>✉️ Email</h3>
+            <a href="mailto:admin@derekfield.co.uk">admin@derekfield.co.uk</a>
+          </div>
+        </div>
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps?q=Derek+Field+%26+Co,37+High+Street,East+Grinstead+RH19+3AF&output=embed" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-brand">Derek Field <span>&</span> Co</div>
+    <p>Want this website live on your own domain? Reply to the email we sent you.</p>
+  </footer>
+
+</body>
+</html>
