@@ -1,311 +1,542 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Derek Field & Co — Chartered Accountants, East Grinstead</title>
-  <meta name="description" content="Derek Field & Co — Chartered Certified Accountants in East Grinstead. Audit, tax, payroll, VAT, and management accounting for businesses of all sizes.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --navy: #0F2440;
-      --navy-mid: #1A3558;
-      --teal: #1A8A7D;
-      --teal-light: #23B5A4;
-      --teal-pale: #E8F6F4;
-      --cloud: #F6F8FA;
-      --white: #FFFFFF;
-      --text: #1E293B;
-      --text-light: #64748B;
-      --border: #E2E8F0;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Derek Field & Co — Chartered Certified Accountants | East Grinstead</title>
+<meta name="description" content="Derek Field & Co are ICAEW Chartered Certified Accountants in East Grinstead, offering audit, tax, payroll and advisory services to sole traders, SMEs and international companies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--navy:#0F2440;--navy-deep:#091A30;--teal:#1A8A7D;--teal-light:#22B8A6;--mint:#E8F6F4;--warm-white:#FAFBFD;--gold:#C9A84C;--text:#2D3748;--text-light:#64748B;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--warm-white);overflow-x:hidden;line-height:1.65}
+h1,h2,h3,h4,h5,h6{font-family:'Sora',sans-serif;line-height:1.15}
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); -webkit-font-smoothing: antialiased; }
+/* PROMO BANNER */
+.promo-banner{
+background:linear-gradient(90deg,var(--teal),var(--teal-light));
+color:#fff;text-align:center;padding:10px 20px;font-size:.85rem;font-weight:500;
+position:relative;z-index:1001;letter-spacing:.02em;
+}
 
-    .banner { background: var(--teal); color: white; text-align: center; padding: 0.6rem 1rem; font-size: 0.82rem; font-weight: 500; }
+/* NAV */
+.nav{
+position:fixed;top:0;left:0;right:0;z-index:1000;
+padding:0 clamp(1.5rem,4vw,4rem);height:70px;
+display:flex;align-items:center;justify-content:space-between;
+transition:all .4s cubic-bezier(.22,1,.36,1);
+}
+.nav.scrolled{
+background:rgba(15,36,64,.82);backdrop-filter:blur(20px) saturate(1.4);
+-webkit-backdrop-filter:blur(20px) saturate(1.4);
+box-shadow:0 1px 30px rgba(0,0,0,.15);
+}
+.nav-brand{
+font-family:'Sora',sans-serif;font-weight:700;font-size:1.15rem;color:#fff;
+text-decoration:none;display:flex;align-items:center;gap:.6rem;
+}
+.nav-brand span{color:var(--teal-light);font-weight:300;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.nav-links{display:flex;gap:2rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.8);text-decoration:none;font-size:.88rem;font-weight:400;transition:color .3s;position:relative}
+.nav-links a:hover{color:#fff}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--teal-light);transition:width .3s}
+.nav-links a:hover::after{width:100%}
+.nav-cta{
+background:var(--teal);color:#fff!important;padding:8px 22px;border-radius:6px;font-weight:600;font-size:.85rem;
+transition:all .3s!important;border:1px solid transparent;
+}
+.nav-cta:hover{background:transparent!important;border-color:var(--teal-light)}
+.nav-cta::after{display:none!important}
+.nav-phone{color:rgba(255,255,255,.9)!important;font-weight:600;font-size:.9rem;letter-spacing:.02em}
+.mobile-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.mobile-toggle span{width:24px;height:2px;background:#fff;transition:all .3s;border-radius:2px}
+.mobile-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mobile-toggle.active span:nth-child(2){opacity:0}
+.mobile-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem; height: 68px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-brand { font-family: 'Source Serif 4', serif; font-weight: 700; font-size: 1.15rem; color: var(--navy); text-decoration: none; }
-    .nav-brand span { color: var(--teal); }
-    .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
-    .nav-links a { font-size: 0.85rem; font-weight: 500; color: var(--text-light); text-decoration: none; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-cta { background: var(--navy); color: white !important; padding: 0.5rem 1.25rem; border-radius: 6px; font-weight: 600 !important; transition: all 0.3s; }
-    .nav-cta:hover { background: var(--teal) !important; }
+/* HERO */
+.hero{
+position:relative;min-height:100vh;background:var(--navy);overflow:hidden;
+display:flex;align-items:center;padding:0 clamp(2rem,6vw,8rem);
+}
+.hero-grid{
+position:absolute;inset:0;
+background-image:
+  linear-gradient(rgba(26,138,125,.06) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(26,138,125,.06) 1px,transparent 1px);
+background-size:60px 60px;
+animation:gridDrift 25s linear infinite;
+}
+@keyframes gridDrift{0%{background-position:0 0}100%{background-position:60px 60px}}
+.hero-glow{
+position:absolute;width:600px;height:600px;border-radius:50%;
+background:radial-gradient(circle,rgba(26,138,125,.12) 0%,transparent 70%);
+pointer-events:none;transform:translate(-50%,-50%);transition:left .6s ease-out,top .6s ease-out;
+left:50%;top:50%;
+}
+.hero-content{position:relative;z-index:2;max-width:800px;padding-top:70px}
+.hero-watermark{
+position:absolute;right:clamp(-2rem,5vw,4rem);top:50%;transform:translateY(-50%);
+font-family:'Sora',sans-serif;font-weight:800;
+font-size:clamp(8rem,18vw,22rem);color:rgba(26,138,125,.06);
+line-height:1;pointer-events:none;user-select:none;white-space:nowrap;z-index:1;
+}
+.hero h1{
+font-size:clamp(2.4rem,6.5vw,5.5rem);font-weight:800;color:#fff;
+clip-path:inset(0 100% 0 0);animation:revealText 1s cubic-bezier(.22,1,.36,1) .3s forwards;
+}
+.hero h1 em{font-style:normal;color:var(--teal-light)}
+@keyframes revealText{to{clip-path:inset(0 0 0 0)}}
+.hero-sub{
+color:rgba(255,255,255,.6);font-size:clamp(1rem,1.8vw,1.25rem);margin-top:1.5rem;
+max-width:520px;line-height:1.7;font-weight:300;
+opacity:0;animation:fadeUp .8s ease .8s forwards;
+}
+.hero-cta{
+display:inline-flex;align-items:center;gap:.6rem;
+margin-top:2.5rem;padding:16px 36px;
+background:var(--teal);color:#fff;text-decoration:none;
+font-family:'Sora',sans-serif;font-weight:600;font-size:.95rem;
+border-radius:8px;transition:all .4s;
+opacity:0;animation:fadeUp .8s ease 1.1s forwards;
+}
+.hero-cta:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(26,138,125,.3)}
+.hero-cta svg{width:18px;height:18px;transition:transform .3s}
+.hero-cta:hover svg{transform:translateX(3px)}
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+.hero-sub,.hero-cta{transform:translateY(20px)}
+.hero-scroll{
+position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+display:flex;flex-direction:column;align-items:center;gap:.5rem;
+color:rgba(255,255,255,.35);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
+}
+.hero-scroll span{width:1px;height:40px;background:rgba(255,255,255,.15);position:relative;overflow:hidden}
+.hero-scroll span::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--teal-light);animation:scrollLine 2s ease infinite}
+@keyframes scrollLine{0%{top:-100%}50%{top:100%}100%{top:100%}}
 
-    /* Hero */
-    .hero {
-      position: relative; background: var(--navy); padding: 6rem 2rem 7rem;
-      text-align: center; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(ellipse at 70% 30%, rgba(26, 138, 125, 0.1) 0%, transparent 50%),
-        radial-gradient(ellipse at 30% 70%, rgba(26, 53, 88, 0.4) 0%, transparent 50%);
-    }
-    .hero-grid {
-      position: absolute; inset: 0; opacity: 0.03;
-      background-image:
-        linear-gradient(var(--teal) 1px, transparent 1px),
-        linear-gradient(90deg, var(--teal) 1px, transparent 1px);
-      background-size: 50px 50px;
-    }
-    .hero-content { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: rgba(26, 138, 125, 0.12); border: 1px solid rgba(26, 138, 125, 0.2);
-      padding: 0.45rem 1.1rem; border-radius: 100px;
-      font-size: 0.78rem; font-weight: 500; color: var(--teal-light);
-      margin-bottom: 2rem; letter-spacing: 0.03em;
-    }
-    .hero h1 {
-      font-family: 'Source Serif 4', serif; font-weight: 700;
-      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
-      color: var(--white); line-height: 1.2; margin-bottom: 1.5rem;
-    }
-    .hero h1 em { font-style: italic; color: var(--teal-light); font-weight: 400; }
-    .hero-sub {
-      font-size: 1.05rem; color: rgba(255,255,255,0.5);
-      max-width: 520px; margin: 0 auto 2.5rem; line-height: 1.7;
-    }
-    .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.85rem 1.75rem; border-radius: 6px;
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; font-weight: 600;
-      text-decoration: none; transition: all 0.3s; border: none; cursor: pointer;
-    }
-    .btn-teal { background: var(--teal); color: white; }
-    .btn-teal:hover { background: var(--teal-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26, 138, 125, 0.3); }
-    .btn-outline { background: transparent; color: rgba(255,255,255,0.7); border: 1.5px solid rgba(255,255,255,0.15); }
-    .btn-outline:hover { border-color: var(--teal); color: var(--teal-light); }
-    .hero-clients {
-      margin-top: 2.5rem; font-size: 0.82rem; color: rgba(255,255,255,0.3);
-    }
+/* SECTION COMMON */
+section{padding:clamp(4rem,10vh,8rem) clamp(1.5rem,6vw,8rem)}
+.section-label{
+font-family:'Sora',sans-serif;font-size:.75rem;font-weight:600;
+letter-spacing:.18em;text-transform:uppercase;color:var(--teal);
+margin-bottom:1rem;display:flex;align-items:center;gap:.8rem;
+}
+.section-label::before{content:'';width:30px;height:1.5px;background:var(--teal)}
+.section-title{font-size:clamp(1.8rem,3.5vw,3rem);font-weight:700;color:var(--navy);margin-bottom:1rem}
 
-    /* Services */
-    .services { padding: 5rem 2rem; background: var(--cloud); }
-    .services .container { max-width: 1000px; margin: 0 auto; }
-    .section-head { text-align: center; margin-bottom: 3rem; }
-    .section-label {
-      font-size: 0.75rem; font-weight: 600; color: var(--teal);
-      letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.75rem;
-    }
-    .section-title {
-      font-family: 'Source Serif 4', serif; font-weight: 700;
-      font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--navy); line-height: 1.25;
-    }
-    .services-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;
-    }
-    .service-card {
-      background: var(--white); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.75rem; transition: all 0.3s;
-    }
-    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 35px rgba(0,0,0,0.06); border-color: var(--teal); }
-    .service-card-icon {
-      width: 44px; height: 44px; background: var(--teal-pale);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      font-size: 1.2rem; margin-bottom: 1rem;
-    }
-    .service-card h3 {
-      font-family: 'Source Serif 4', serif; font-weight: 700;
-      font-size: 1rem; color: var(--navy); margin-bottom: 0.5rem;
-    }
-    .service-card p { font-size: 0.88rem; color: var(--text-light); line-height: 1.6; }
+/* REVEAL ANIMATIONS */
+.reveal{opacity:0;transform:translateY(40px);transition:all .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-right{opacity:0;transform:translateX(60px);transition:all .7s cubic-bezier(.22,1,.36,1)}
+.reveal-right.visible{opacity:1;transform:translateX(0)}
 
-    /* About */
-    .about { padding: 5rem 2rem; background: var(--white); }
-    .about .container { max-width: 800px; margin: 0 auto; text-align: center; }
-    .about p { font-size: 1.05rem; color: var(--text-light); line-height: 1.8; margin-bottom: 1rem; }
-    .about-stats {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem; margin-top: 2.5rem;
-    }
-    .about-stat {
-      padding: 1.5rem; background: var(--cloud); border-radius: 10px; border: 1px solid var(--border);
-    }
-    .about-stat-number {
-      font-family: 'Source Serif 4', serif; font-weight: 700;
-      font-size: 1.8rem; color: var(--teal); margin-bottom: 0.2rem;
-    }
-    .about-stat-label { font-size: 0.82rem; color: var(--text-light); }
+/* WHO WE HELP */
+.who-section{background:var(--warm-white)}
+.who-header{text-align:center;max-width:600px;margin:0 auto 4rem}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1100px;margin:0 auto}
+.who-card{
+background:#fff;border-radius:12px;padding:3rem 2rem;text-align:center;
+border:1px solid rgba(15,36,64,.06);
+transition:all .45s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;
+}
+.who-card::before{
+content:'';position:absolute;top:0;left:0;right:0;height:3px;
+background:var(--teal);transform:scaleX(0);transition:transform .4s;transform-origin:left;
+}
+.who-card:hover{transform:translateY(-10px);box-shadow:0 20px 60px rgba(15,36,64,.1)}
+.who-card:hover::before{transform:scaleX(1)}
+.who-icon{
+width:64px;height:64px;border-radius:16px;background:var(--mint);
+display:flex;align-items:center;justify-content:center;margin:0 auto 1.8rem;
+}
+.who-icon svg{width:28px;height:28px;stroke:var(--teal);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.who-card h3{font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:.8rem}
+.who-card p{color:var(--text-light);font-size:.92rem;line-height:1.7}
 
-    /* Contact */
-    .contact { padding: 5rem 2rem; background: var(--cloud); }
-    .contact .container { max-width: 1000px; margin: 0 auto; }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
-    .contact-card {
-      background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem;
-    }
-    .contact-item { margin-bottom: 1.75rem; }
-    .contact-item:last-child { margin-bottom: 0; }
-    .contact-item h3 {
-      font-family: 'Source Serif 4', serif; font-size: 0.95rem;
-      color: var(--navy); margin-bottom: 0.35rem;
-    }
-    .contact-item p, .contact-item a {
-      font-size: 0.95rem; color: var(--text-light); text-decoration: none; line-height: 1.6;
-    }
-    .contact-item a:hover { color: var(--teal); }
-    .contact-map {
-      border-radius: 16px; overflow: hidden; border: 1px solid var(--border); min-height: 320px;
-    }
-    .contact-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; }
+/* SERVICES */
+.services-section{background:var(--mint)}
+.services-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1200px;margin:0 auto;align-items:start}
+.services-sticky{position:sticky;top:120px}
+.services-sticky p{color:var(--text-light);line-height:1.8;margin-top:1.2rem;font-size:.95rem}
+.services-list{display:flex;flex-direction:column;gap:1.5rem}
+.service-card{
+background:#fff;border-radius:12px;padding:2.2rem 2.5rem;
+border:1px solid rgba(15,36,64,.05);
+transition:all .4s cubic-bezier(.22,1,.36,1);
+}
+.service-card:hover{transform:translateX(6px);box-shadow:0 10px 40px rgba(15,36,64,.08)}
+.service-num{
+font-family:'Sora',sans-serif;font-size:2.5rem;font-weight:800;
+color:rgba(26,138,125,.15);line-height:1;margin-bottom:.6rem;
+}
+.service-card h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.service-card p{color:var(--text-light);font-size:.88rem;line-height:1.7}
 
-    footer { background: var(--navy); padding: 3rem 2rem; text-align: center; }
-    .footer-brand {
-      font-family: 'Source Serif 4', serif; font-weight: 700;
-      font-size: 1.05rem; color: var(--white); margin-bottom: 0.4rem;
-    }
-    .footer-brand span { color: var(--teal-light); }
-    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+/* STATS */
+.stats-section{
+background:var(--navy);padding:clamp(3rem,8vh,5rem) clamp(1.5rem,6vw,8rem);
+}
+.stats-grid{
+display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;
+max-width:1100px;margin:0 auto;text-align:center;
+}
+.stat-item{padding:1.5rem}
+.stat-number{
+font-family:'Sora',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;
+color:var(--teal-light);line-height:1;margin-bottom:.6rem;
+}
+.stat-label{color:rgba(255,255,255,.55);font-size:.85rem;font-weight:400;letter-spacing:.04em}
 
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .contact-grid { grid-template-columns: 1fr; }
-      .hero { padding: 4rem 1.5rem 5rem; }
-      .about-stats { grid-template-columns: 1fr; }
-    }
-  </style>
+/* ABOUT */
+.about-section{
+position:relative;min-height:500px;
+background:url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800') center/cover no-repeat;
+display:flex;align-items:center;justify-content:flex-end;
+padding:clamp(3rem,8vh,6rem) clamp(1.5rem,6vw,8rem);
+}
+.about-section::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,36,64,.75),rgba(15,36,64,.5))}
+.about-card{
+position:relative;z-index:2;max-width:560px;
+background:rgba(255,255,255,.1);backdrop-filter:blur(24px) saturate(1.3);
+-webkit-backdrop-filter:blur(24px) saturate(1.3);
+border:1px solid rgba(255,255,255,.15);border-radius:16px;
+padding:clamp(2rem,4vw,3.5rem);
+}
+.about-card .section-label{color:var(--teal-light)}
+.about-card .section-label::before{background:var(--teal-light)}
+.about-card h2{color:#fff;font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:1.2rem}
+.about-card p{color:rgba(255,255,255,.8);line-height:1.8;font-size:.94rem;margin-bottom:1rem}
+
+/* CONTACT */
+.contact-section{background:var(--warm-white)}
+.contact-wrap{
+display:grid;grid-template-columns:1fr 1px 1fr;gap:clamp(2rem,4vw,4rem);
+max-width:1100px;margin:0 auto;align-items:start;
+}
+.contact-divider{background:var(--gold);opacity:.35;align-self:stretch}
+.contact-info h3{font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:.5rem;margin-top:1.8rem}
+.contact-info h3:first-child{margin-top:0}
+.contact-info p,.contact-info a{color:var(--text-light);font-size:.92rem;line-height:1.8;text-decoration:none;display:block}
+.contact-info a:hover{color:var(--teal)}
+.contact-map{border-radius:12px;overflow:hidden;height:100%;min-height:350px}
+.contact-map iframe{width:100%;height:100%;border:0;display:block;min-height:350px}
+
+/* FOOTER */
+.footer{
+background:var(--navy-deep);color:rgba(255,255,255,.5);
+padding:3rem clamp(1.5rem,6vw,8rem);
+display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;
+font-size:.82rem;
+}
+.footer a{color:var(--teal-light);text-decoration:none}
+.footer-reply{
+font-size:.85rem;color:rgba(255,255,255,.7);
+background:rgba(255,255,255,.05);padding:12px 24px;border-radius:8px;
+border:1px solid rgba(255,255,255,.08);
+}
+
+/* MOBILE */
+@media(max-width:900px){
+  .nav-links{
+    position:fixed;top:0;right:0;bottom:0;width:280px;
+    background:rgba(15,36,64,.97);backdrop-filter:blur(20px);
+    flex-direction:column;padding:6rem 2rem 2rem;gap:1.5rem;
+    transform:translateX(100%);transition:transform .4s cubic-bezier(.22,1,.36,1);
+    z-index:999;
+  }
+  .nav-links.open{transform:translateX(0)}
+  .mobile-toggle{display:flex}
+  .who-grid{grid-template-columns:1fr}
+  .services-wrap{grid-template-columns:1fr}
+  .services-sticky{position:static}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-wrap{grid-template-columns:1fr;gap:2rem}
+  .contact-divider{display:none}
+  .hero-watermark{font-size:8rem;right:-1rem}
+  .about-section{justify-content:center}
+}
+@media(max-width:480px){
+  .stats-grid{grid-template-columns:1fr}
+  .hero{padding:0 1.5rem}
+}
+</style>
 </head>
 <body>
 
-  <div class="banner">✨ Free demo site built for Derek Field & Co — reply to our email to claim it</div>
+<!-- PROMO BANNER -->
+<div class="promo-banner">
+  &#10024; Free demo site built for Derek Field &amp; Co — reply to our email to claim it
+</div>
 
-  <nav>
-    <a href="#" class="nav-brand">Derek Field <span>&</span> Co</a>
-    <ul class="nav-links">
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="tel:01342327353" class="nav-cta">01342 327353</a></li>
-    </ul>
-  </nav>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-brand">Derek Field &amp; Co <span>Chartered Accountants</span></a>
+  <div class="nav-links" id="navLinks">
+    <a href="#who">Who We Help</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:01342327353" class="nav-phone">01342 327353</a>
+    <a href="tel:01342327353" class="nav-cta">Call Us</a>
+  </div>
+  <div class="mobile-toggle" id="mobileToggle">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
 
-  <section class="hero">
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div class="hero-badge">Chartered Certified Accountants · ICAEW</div>
-      <h1>Your numbers, <em>in safe hands.</em></h1>
-      <p class="hero-sub">Audit, tax, payroll, and management accounting for businesses of all sizes — from sole traders to multi-million pound companies. Based on the High Street in East Grinstead.</p>
-      <div class="hero-actions">
-        <a href="tel:01342327353" class="btn btn-teal">☎ Call: 01342 327353</a>
-        <a href="#services" class="btn btn-outline">Our Services →</a>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow" id="heroGlow"></div>
+  <div class="hero-watermark">&amp; Co</div>
+  <div class="hero-content">
+    <h1>Accounting that<br>moves with <em>your</em><br>ambition.</h1>
+    <p class="hero-sub">Chartered Certified Accountants in East Grinstead. From sole traders to multi-million pound international companies — we make the numbers work so you can focus on growth.</p>
+    <a href="tel:01342327353" class="hero-cta">
+      Speak to our team
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="hero-scroll">
+    Scroll
+    <span></span>
+  </div>
+</section>
+
+<!-- WHO WE HELP -->
+<section class="who-section" id="who">
+  <div class="who-header reveal">
+    <div class="section-label">Who We Help</div>
+    <h2 class="section-title">Whatever stage you're at, we've been there with businesses like yours.</h2>
+  </div>
+  <div class="who-grid">
+    <div class="who-card reveal" style="transition-delay:.1s">
+      <div class="who-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 1 0-16 0"/></svg>
       </div>
-      <p class="hero-clients">Trusted by sole traders, SMEs, and European clients across the UK</p>
+      <h3>Sole Traders</h3>
+      <p>Self-assessment, bookkeeping, and tax planning tailored for freelancers and independent professionals who need clarity without complexity.</p>
     </div>
-  </section>
-
-  <section class="services" id="services">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">What We Do</p>
-        <h2 class="section-title">Full-service accounting, tailored to your business.</h2>
+    <div class="who-card reveal" style="transition-delay:.25s">
+      <div class="who-icon">
+        <svg viewBox="0 0 24 24"><path d="M3 21h18M9 8h1M9 12h1M9 16h1M14 8h1M14 12h1M14 16h1"/><rect x="5" y="3" width="14" height="18" rx="1"/></svg>
       </div>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-card-icon">📊</div>
-          <h3>Audit &amp; Assurance</h3>
-          <p>Statutory audits and assurance services that give you and your stakeholders confidence in your numbers.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-icon">💷</div>
-          <h3>Corporate Tax</h3>
-          <p>Corporation tax planning and compliance, structured to minimise your liability while keeping HMRC happy.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-icon">👤</div>
-          <h3>Personal Tax</h3>
-          <p>Self-assessment, capital gains, inheritance tax planning — we take the stress out of your personal finances.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-icon">📋</div>
-          <h3>Payroll Services</h3>
-          <p>End-to-end payroll management including RTI submissions, pensions auto-enrolment, and P11D reporting.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-icon">📈</div>
-          <h3>Management Accounts</h3>
-          <p>Monthly and quarterly management reporting that gives you the insight to make better business decisions.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-card-icon">🇪🇺</div>
-          <h3>VAT &amp; International</h3>
-          <p>UK and EU VAT compliance, cross-border advisory, and support for European clients operating in the UK.</p>
-        </div>
-      </div>
+      <h3>Growing Businesses</h3>
+      <p>Management accounts, payroll, and strategic tax advice for SMEs scaling from startup hustle into sustained, profitable growth.</p>
     </div>
-  </section>
-
-  <section class="about" id="about">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">About Us</p>
-        <h2 class="section-title">Established on East Grinstead High Street.</h2>
+    <div class="who-card reveal" style="transition-delay:.4s">
+      <div class="who-icon">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10"/></svg>
       </div>
-      <p>Derek Field & Co provides a wide range of accounting, audit, and tax services to a diverse portfolio of clients. From the smallest sole trader to large multi-million pound companies, we deliver practical, hands-on financial guidance that helps businesses grow.</p>
-      <p>We have a particularly strong reputation with European clients and businesses operating across the UK and EU, offering specialist knowledge of cross-border compliance and reporting requirements.</p>
-      <div class="about-stats">
-        <div class="about-stat">
-          <div class="about-stat-number">5★</div>
-          <div class="about-stat-label">Google Rating</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">UK &amp; EU</div>
-          <div class="about-stat-label">Cross-border expertise</div>
-        </div>
-        <div class="about-stat">
-          <div class="about-stat-number">ICAEW</div>
-          <div class="about-stat-label">Chartered Certified</div>
-        </div>
-      </div>
+      <h3>International Companies</h3>
+      <p>Cross-border tax, EU compliance, and audit services for businesses operating across multiple jurisdictions — a longstanding strength of the practice.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-label">Contact</p>
-        <h2 class="section-title">Let's talk about your business.</h2>
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-wrap">
+    <div class="services-sticky reveal">
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Services built around real businesses, not textbook theory.</h2>
+      <p>Every engagement begins with understanding your goals. We then deliver exactly the level of support you need — nothing more, nothing less — with transparent pricing and no jargon.</p>
+    </div>
+    <div class="services-list">
+      <div class="service-card reveal-right" style="transition-delay:.1s">
+        <div class="service-num">01</div>
+        <h3>Audit &amp; Assurance</h3>
+        <p>Statutory audits, internal reviews, and assurance engagements conducted with rigour and a practical eye for your business realities.</p>
       </div>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <div class="contact-item">
-            <h3>📍 Address</h3>
-            <p>Crown House<br>37 High Street<br>East Grinstead<br>RH19 3AF</p>
-          </div>
-          <div class="contact-item">
-            <h3>📞 Phone</h3>
-            <a href="tel:01342327353">01342 327353</a>
-          </div>
-          <div class="contact-item">
-            <h3>✉️ Email</h3>
-            <a href="mailto:admin@derekfield.co.uk">admin@derekfield.co.uk</a>
-          </div>
-        </div>
-        <div class="contact-map">
-          <iframe src="https://www.google.com/maps?q=Derek+Field+%26+Co,37+High+Street,East+Grinstead+RH19+3AF&output=embed" allowfullscreen loading="lazy"></iframe>
-        </div>
+      <div class="service-card reveal-right" style="transition-delay:.2s">
+        <div class="service-num">02</div>
+        <h3>Corporate Tax</h3>
+        <p>Tax planning, compliance, and R&amp;D claims for limited companies — structured to minimise liability and maximise reliefs within HMRC guidelines.</p>
+      </div>
+      <div class="service-card reveal-right" style="transition-delay:.3s">
+        <div class="service-num">03</div>
+        <h3>Personal Tax</h3>
+        <p>Self-assessment returns, capital gains planning, and income structuring for directors, landlords, and high-net-worth individuals.</p>
+      </div>
+      <div class="service-card reveal-right" style="transition-delay:.4s">
+        <div class="service-num">04</div>
+        <h3>Payroll Services</h3>
+        <p>End-to-end payroll management including RTI submissions, auto-enrolment pensions, and year-end P11D reporting.</p>
+      </div>
+      <div class="service-card reveal-right" style="transition-delay:.5s">
+        <div class="service-num">05</div>
+        <h3>Management Accounts</h3>
+        <p>Monthly and quarterly reporting that gives you a clear picture of profitability, cash flow, and KPIs — so decisions are based on data, not guesswork.</p>
+      </div>
+      <div class="service-card reveal-right" style="transition-delay:.6s">
+        <div class="service-num">06</div>
+        <h3>VAT &amp; International</h3>
+        <p>UK and cross-border VAT compliance, EU trade advisory, and multi-currency accounting for businesses with international operations.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <div class="footer-brand">Derek Field <span>&</span> Co</div>
-    <p>Want this website live on your own domain? Reply to the email we sent you.</p>
-  </footer>
+<!-- STATS -->
+<section class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item reveal" style="transition-delay:.1s">
+      <div class="stat-number" data-target="5" data-suffix="&#9733;">0</div>
+      <div class="stat-label">Google Rating</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.2s">
+      <div class="stat-number" data-text="UK &amp; EU">—</div>
+      <div class="stat-label">Client Reach</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.3s">
+      <div class="stat-number" data-text="ICAEW">—</div>
+      <div class="stat-label">Chartered Certified</div>
+    </div>
+    <div class="stat-item reveal" style="transition-delay:.4s">
+      <div class="stat-number" data-text="Sole Traders to PLCs">—</div>
+      <div class="stat-label">Client Range</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="about-card reveal">
+    <div class="section-label">About the Practice</div>
+    <h2>Trusted in East Grinstead. Connected across Europe.</h2>
+    <p>Derek Field &amp; Co is an established ICAEW Chartered Certified firm based on East Grinstead High Street. We combine the personal attention of a local practice with the technical depth to support complex, multi-jurisdictional work.</p>
+    <p>Our clients range from individuals and sole traders to multi-million pound companies with operations across the UK and Europe. That breadth is deliberate — it keeps our advice grounded, practical, and commercially aware.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div style="max-width:1100px;margin:0 auto">
+    <div class="reveal" style="margin-bottom:3rem">
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Start a conversation.</h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info reveal">
+        <h3>Address</h3>
+        <p>Crown House, 37 High Street<br>East Grinstead, RH19 3AF</p>
+        <h3>Telephone</h3>
+        <a href="tel:01342327353">01342 327353</a>
+        <h3>Email</h3>
+        <a href="mailto:admin@derekfield.co.uk">admin@derekfield.co.uk</a>
+        <h3>Office Hours</h3>
+        <p>Monday – Friday: 9:00am – 5:30pm<br>Saturday – Sunday: Closed</p>
+      </div>
+      <div class="contact-divider"></div>
+      <div class="contact-map reveal" style="transition-delay:.2s">
+        <iframe src="https://www.google.com/maps?q=Derek+Field+%26+Co,37+High+Street,East+Grinstead+RH19+3AF&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Derek Field and Co location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>&copy; 2026 Derek Field &amp; Co — Chartered Certified Accountants. Crown House, 37 High Street, East Grinstead.</div>
+  <div class="footer-reply">Want this website live on your own domain? Reply to the email we sent you.</div>
+</footer>
+
+<script>
+(function(){
+  // NAV scroll state
+  var nav = document.getElementById('nav');
+  var banner = document.querySelector('.promo-banner');
+  var bannerH = banner.offsetHeight;
+  function checkNav(){
+    if(window.scrollY > bannerH){
+      nav.classList.add('scrolled');
+      nav.style.top = '0';
+    } else {
+      nav.classList.remove('scrolled');
+      nav.style.top = (bannerH - window.scrollY) + 'px';
+    }
+  }
+  window.addEventListener('scroll', checkNav, {passive:true});
+  window.addEventListener('resize', function(){ bannerH = banner.offsetHeight; checkNav(); });
+  checkNav();
+
+  // Mobile menu
+  var toggle = document.getElementById('mobileToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    toggle.classList.toggle('active');
+    links.classList.toggle('open');
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ toggle.classList.remove('active'); links.classList.remove('open'); });
+  });
+
+  // Hero mouse glow
+  var hero = document.getElementById('hero');
+  var glow = document.getElementById('heroGlow');
+  hero.addEventListener('mousemove', function(e){
+    var rect = hero.getBoundingClientRect();
+    glow.style.left = (e.clientX - rect.left) + 'px';
+    glow.style.top = (e.clientY - rect.top) + 'px';
+  });
+
+  // Intersection Observer for reveals
+  var revealEls = document.querySelectorAll('.reveal, .reveal-right');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'});
+    revealEls.forEach(function(el){ obs.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('visible'); });
+  }
+
+  // Count-up / type-in for stat numbers
+  var statEls = document.querySelectorAll('.stat-number');
+  var statObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      var el = entry.target;
+      statObs.unobserve(el);
+      var target = el.getAttribute('data-target');
+      var text = el.getAttribute('data-text');
+      if(text){
+        el.textContent = '';
+        var decoded = document.createElement('span');
+        decoded.innerHTML = text;
+        var chars = decoded.textContent.split('');
+        var i = 0;
+        var iv = setInterval(function(){
+          el.textContent += chars[i];
+          i++;
+          if(i >= chars.length) clearInterval(iv);
+        }, 50);
+      } else if(target){
+        var suffix = el.getAttribute('data-suffix') || '';
+        var num = parseInt(target);
+        var current = 0;
+        var step = Math.max(1, Math.floor(num / 30));
+        var iv2 = setInterval(function(){
+          current += step;
+          if(current >= num){ current = num; clearInterval(iv2); }
+          el.textContent = current + suffix;
+        }, 40);
+      }
+    });
+  }, {threshold:0.5});
+  statEls.forEach(function(el){ statObs.observe(el); });
+})();
+</script>
 
 </body>
 </html>
